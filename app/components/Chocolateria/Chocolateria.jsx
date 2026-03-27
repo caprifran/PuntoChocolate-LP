@@ -23,16 +23,15 @@ export default function Chocolateria() {
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className='h-[320px]'
+          className='h-[320px] relative w-full md:w-[480px] md:min-w-[480px]'
         >
           <Image
-            src={"https://placehold.co/480x320"}
+            src={"https://placehold.co/480x320/png"}
             alt="Chocolatería artesanal referencia"
-            width={480}
-            height={320}
-            className="object-cover h-full w-full"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 480px"
             priority
-            unoptimized
           />
         </motion.div>
       </div>

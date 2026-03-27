@@ -30,12 +30,12 @@ export default function Card({ sabor, delay }) {
           style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}
         >
           <Image
-            src="https://placehold.co/200x200"
+            src="https://placehold.co/200x200/png"
             alt={sabor.nombre}
             width={200}
             height={200}
             className="object-cover"
-            unoptimized
+            style={{ width: "auto", height: "auto" }}
             draggable={false}
           />
         </div>

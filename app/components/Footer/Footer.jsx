@@ -23,7 +23,7 @@ export default function Footer() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7 }}
                 >   
-                    <Image src="/images/heladeria-icono.jpg" alt="Logo Punto Chocolate" width={64} height={64} className="rounded-full mb-2 shadow-soft" />
+                    <Image src="/images/heladeria-icono.jpg" alt="Logo Punto Chocolate" width={64} height={64} className="rounded-full mb-2 shadow-soft w-16 h-16" />
                 </motion.div>
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
@@ -80,7 +80,7 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >   
-            <div className="text-center text-choco/60 text-sm mt-8 mb-2">
+            <div className="text-center text-cream/60 text-sm mt-8 mb-2">
                 © {new Date().getFullYear()} Punto Chocolate. Todos los derechos reservados.
             </div>
         </motion.div>

@@ -50,7 +50,7 @@ export default function Navbar() {
             alt="Logo Punto Chocolate"
             width={40}
             height={40}
-            className="rounded-full shadow-soft"
+            className="rounded-full shadow-soft w-10 h-10"
           />
           <span className={`${playfair.className} text-xl font-bold text-cream hidden sm:inline`}>
             Punto Chocolate

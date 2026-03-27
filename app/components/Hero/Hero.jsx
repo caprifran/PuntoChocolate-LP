@@ -8,13 +8,12 @@ export default function Hero() {
   return (
     <section className="relative w-full min-h-[40vh] sm:min-h-[50vh] md:min-h-[70vh] flex items-center justify-center bg-cream overflow-hidden pt-[64px]" id="hero">
       <Image
-        src={"https://placehold.co/1920x1080"}
+        src={"https://placehold.co/1920x1080/png"}
         alt="Banner principal Punto Chocolate"
         fill
         priority
         className="object-cover w-full h-full absolute inset-0 z-0"
         sizes="100vw"
-        unoptimized
       />
       <div className="relative z-10 w-full flex flex-col items-center justify-end h-full px-4 py-6 md:py-12 mt-auto">
         <motion.h1
