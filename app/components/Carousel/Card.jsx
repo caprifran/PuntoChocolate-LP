@@ -32,10 +32,9 @@ export default function Card({ sabor, delay }) {
           <Image
             src="https://placehold.co/200x200/png"
             alt={sabor.nombre}
-            width={200}
-            height={200}
+            fill
             className="object-cover"
-            style={{ width: "auto", height: "auto" }}
+            sizes="200px"
             draggable={false}
           />
         </div>
