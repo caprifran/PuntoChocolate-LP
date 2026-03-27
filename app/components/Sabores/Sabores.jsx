@@ -10,7 +10,7 @@ const EmblaCarousel = dynamic(() => import('../Carousel/EmblaCarousel.jsx'), { s
 export default function Sabores() {
   const [activeTab, setActiveTab] = useState(0);
   return (
-    <section className="py-16 bg-cream pb-[10px]" id="sabores">
+    <section className="my-16 bg-cream pb-[10px]" id="sabores">
       <div className="max-w-6xl mx-auto px-4">
         {/* Tabs */}
         <div className="flex flex-wrap justify-center gap-3 mb-10">

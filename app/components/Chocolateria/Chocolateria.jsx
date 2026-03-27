@@ -6,7 +6,7 @@ import TiposChocolates from './TiposChocolates.jsx';
 
 export default function Chocolateria() {
   return (
-    <section className="py-16 text-cream" id="chocolateria">
+    <section className="my-16 text-cream" id="chocolateria">
       <div className="bg-choco mx-auto flex flex-col-reverse md:flex-row gap-6 md:gap-10 items-center md:h-[320px] w-full shadow-soft overflow-hidden">
         <motion.div
           initial={{ opacity: 0, x: -40 }}

@@ -5,7 +5,7 @@ import { playfair } from '../../font.js';
 
 export default function About() {
   return (
-    <section className="py-16 text-cream" id="about">
+    <section className="my-16 text-cream" id="about">
       <div className="bg-choco mx-auto flex flex-col md:flex-row gap-6 md:gap-10 items-center md:h-[320px] w-full shadow-soft overflow-hidden">
         <motion.div
           initial={{ opacity: 0, x: -40 }}
