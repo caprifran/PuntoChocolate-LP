@@ -21,7 +21,7 @@ export default function TiposChocolates() {
               className={`select-none cursor-pointer flex items-center justify-center px-6 h-12 min-w-[120px] rounded-2xl font-semibold text-base md:text-lg shadow-soft transition-colors duration-200 border-2 pl-[5px] pr-[5px]
                 ${activeTab === idx
                   ? 'bg-cream text-choco border-choco'
-                  : 'bg-choco text-cream border-choco'}
+                  : 'bg-choco text-cream border-choco hover:bg-cream/80 hover:text-choco'}
               `}
               style={{height: '48px'}}
               tabIndex={0}
