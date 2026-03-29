@@ -21,7 +21,7 @@ export default function Card({ sabor, delay }) {
       <motion.div
         animate={{ rotateY: isFlipped ? 180 : 0 }}
         transition={{ duration: 0.5 }}
-        className="relative w-full h-full rounded-xl shadow-soft"
+        className="relative w-full h-full rounded-xl"
         style={{ transformStyle: 'preserve-3d'}}
       >
         {/* Front */}
@@ -30,7 +30,7 @@ export default function Card({ sabor, delay }) {
           style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}
         >
           <Image
-            src="https://placehold.co/200x200/png"
+            src={sabor.imagen}
             alt={sabor.nombre}
             fill
             className="object-cover"

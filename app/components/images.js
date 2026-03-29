@@ -18,5 +18,7 @@ export const CHOCOLATE_IMG = '/images/ChocolateMain.jpg';
 export const ABOUT_SECTION_IMG = '/images/AboutUs.jpg';
 // Imagen para la seccion Hero
 export const HERO_SECTION_IMG = '/images/Hero.jpg';
+// Imagen Alfajor Seccion Alfajores
+export const ALFAJOR_IMG = '/images/AlfajorMain.jpg';
 // Imagen para la seccion Hero en mobile
 export const HERO_MOBILE_IMG = '/images/HeroMobile.jpg';
