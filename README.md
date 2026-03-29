@@ -14,6 +14,7 @@ El sitio incluye las siguientes secciones:
 - **Hero** — Banner de presentación
 - **Helados** — Carrusel interactivo de sabores (Embla Carousel)
 - **Chocolatería** — Catálogo de productos de chocolatería
+- **Alfajores** — Catálogo de alfajores artesanales con carrusel por tipo
 - **About** — Historia y filosofía del local
 - **Footer** — Información de contacto y redes sociales
 - **WhatsApp Float** — Botón flotante para contacto directo
@@ -64,6 +65,7 @@ app/
 │   ├── About/          # Sección "Sobre nosotros"
 │   ├── Carousel/       # Componentes del carrusel (Embla)
 │   ├── Chocolateria/   # Sección de chocolatería
+│   ├── Alfajores/      # Sección de alfajores artesanales
 │   ├── Footer/         # Pie de página y contacto
 │   ├── Hero/           # Banner principal
 │   ├── Navbar/         # Barra de navegación
