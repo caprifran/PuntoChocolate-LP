@@ -23,18 +23,33 @@ export default function Navbar() {
 
   const handleClick = (e, id) => {
     e.preventDefault();
+
+    const scroll = () => {
+      const element = document.getElementById(id);
+      const navbar = document.getElementById('navbar');
+
+      if (!element || !navbar) return;
+
+      const offset = navbar.offsetHeight;
+      const y =
+        element.getBoundingClientRect().top +
+        window.pageYOffset -
+        offset;
+
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    };
+
     if (menuOpen) {
       setMenuOpen(false);
-      setTimeout(() => {
-        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-      }, 350);
+      setTimeout(scroll, 350);
     } else {
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      scroll();
     }
   };
 
   return (
     <motion.nav
+      id="navbar"
       className={`sticky top-0 left-0 w-full max-w-[100vw] overflow-hidden z-50 transition-all duration-300 bg-choco ${
         scrolled
           ? 'shadow-soft backdrop-blur-md'
