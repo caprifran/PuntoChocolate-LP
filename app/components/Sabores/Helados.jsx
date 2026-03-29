@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { playfair } from '../../font.js';
 import Sabores from './Sabores.jsx';
+import { HELADO_IMG } from '../images.js';
 
 export default function Helados() {
   return (
@@ -15,7 +16,7 @@ export default function Helados() {
           className='h-[320px] relative w-full md:w-[480px] md:min-w-[480px]'
         >
           <Image
-            src={"https://placehold.co/480x320/png"}
+            src={HELADO_IMG}
             alt="Helados artesanales referencia"
             fill
             className="object-cover"

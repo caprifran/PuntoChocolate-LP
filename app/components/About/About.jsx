@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { playfair } from '../../font.js';
+import { ABOUT_SECTION_IMG } from '../images.js';
 
 export default function About() {
   return (
@@ -14,7 +15,7 @@ export default function About() {
           className='h-[320px] relative w-full md:w-[480px] md:min-w-[480px]'
         >
           <Image
-            src={"https://placehold.co/480x320/png"}
+            src={ABOUT_SECTION_IMG}
             alt="Chocolatería artesanal referencia"
             fill
             className="object-cover"

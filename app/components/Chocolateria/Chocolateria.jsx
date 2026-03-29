@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { playfair } from '../../font.js';
 import TiposChocolates from './TiposChocolates.jsx';
+import { CHOCOLATE_IMG } from '../images.js';
 
 export default function Chocolateria() {
   return (
@@ -26,7 +27,7 @@ export default function Chocolateria() {
           className='h-[320px] relative w-full md:w-[480px] md:min-w-[480px]'
         >
           <Image
-            src={"https://placehold.co/480x320/png"}
+            src={CHOCOLATE_IMG}
             alt="Chocolatería artesanal referencia"
             fill
             className="object-cover"
