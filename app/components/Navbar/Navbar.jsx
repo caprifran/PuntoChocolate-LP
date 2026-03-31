@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { playfair } from '../../font.js';
+import { ICONO_PUNTO_CHOCO } from '../images.js';
 
 const links = [
   { name: 'Inicio', id: 'hero' },
@@ -52,25 +53,18 @@ export default function Navbar() {
     <motion.nav
       id="navbar"
       className={`sticky top-0 left-0 w-full max-w-[100vw] overflow-hidden z-50 transition-all duration-300 bg-choco ${scrolled
-          ? 'shadow-soft backdrop-blur-md'
-          : ''
+        ? 'shadow-soft backdrop-blur-md'
+        : ''
         }`}
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
-        {/* Logo + Nombre */}
         <a
           href="#hero"
           onClick={(e) => handleClick(e, 'hero')}
           className="flex items-center gap-2 no-underline"
         >
-          <Image
-            src="/images/heladeria-icono.jpg"
-            alt="Logo Punto Chocolate"
-            width={40}
-            height={40}
-            className="rounded-full shadow-soft w-10 h-10"
-          />
-          <span className={`${playfair.className} text-xl font-bold text-cream hidden sm:inline`}>
+          <Image src={ICONO_PUNTO_CHOCO} alt="Logo Punto Chocolate" width={64} height={64} className="h-10 w-10 rounded-full object-cover" />
+          <span className={`${playfair.className} text-2xl italic tracking-tight text-cream hidden sm:inline`}>
             Punto Chocolate
           </span>
         </a>
