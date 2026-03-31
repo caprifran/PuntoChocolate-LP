@@ -1,55 +1,32 @@
 'use client';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Contact from './Contact.jsx';
 import { playfair } from '../../font.js';
 import { socialLinks } from './social.js';
+import { ICONO_PUNTO_CHOCO } from '../images.js';
 
 const links = [
-  { name: 'Inicio', id: 'hero' },
-  { name: 'Helados', id: 'helados' },
-  { name: 'Chocolatería', id: 'chocolateria' },
-  { name: 'Sobre Nosotros', id: 'about' },
+    { name: 'Inicio', id: 'hero' },
+    { name: 'Helados', id: 'helados' },
+    { name: 'Chocolatería', id: 'chocolateria' },
+    { name: 'Sobre Nosotros', id: 'about' },
 ];
 
 export default function Footer() {
-  return (
-    <footer className="text-cream pt-[10px] relative bg-gradient-to-br from-[#2d1f1f] via-choco to-[#523e3e] shadow-soft mt-24 pt-12 pb-4 px-4 md:px-0 overflow-hidden p-[1rem]">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-start md:justify-between gap-6 md:gap-0 pt-[2rem] pb-[2rem] px-4">
-            {/* Logo y frase */}
-            <div className="flex flex-col items-center mb-6 md:mb-0 w-full md:w-[33.33%]">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7 }}
-                >   
-                    <Image src="/images/heladeria-icono.jpg" alt="Logo Punto Chocolate" width={64} height={64} className="rounded-full mb-2 shadow-soft w-16 h-16" />
-                </motion.div>
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7 }}
-                    className="text-lg font-semibold text-center"
-                >
-                    "¡El sabor de la Patagonia en cada cucharada!"
-                </motion.p>
+    return (
+        <footer className="bg-surface dark:bg-choco w-full border-t border-cream/80 flex flex-col justify-between items-center px-12 py-16 gap-10">
+            <div className="flex items-center">
+                <div className="flex items-center gap-4">
+                    <Image src={ICONO_PUNTO_CHOCO} alt="Logo Punto Chocolate" width={64} height={64} className="h-10 w-10 rounded-full object-cover" />
+                    <span className={`${playfair.className} text-2xl italic tracking-tight text-cream`}>Punto Chocolate</span>
+                </div>
             </div>
-            {/* Contacto integrado */}
-            <div className="max-w-4xl mx-auto w-full md:w-[33.33%]">
-                <Contact />
+            <div className="flex flex-col items-center text-center gap-4">
+                <p className="text-cream font-label text-xs tracking-widest uppercase opacity-80">Las Frambuesas 275 local 5 - Villa La Angostura</p>
+                <p className="text-cream font-label text-xs tracking-widest uppercase opacity-80">Todos los días de 12 a 00 hs</p>
             </div>
-            
-            {/* Redes sociales */}
-            <div className="flex flex-col items-center gap-3 w-full md:w-[33.33%]">
-                <motion.h3
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7 }}
-                    className={`${playfair.className} text-3xl font-bold text-center`}
-                >
-                    Redes Sociales
-                </motion.h3>  
-                <div className="flex gap-4 mb-2 justify-center">
+            <div className="w-full border-t border-cream/80 mt-8 pt-8 flex flex-col items-center gap-6">
+                <div className="flex gap-6 mb-2 justify-center text-cream">
                     {socialLinks.map(social => (
                         <motion.a
                             key={social.name}
@@ -60,30 +37,18 @@ export default function Footer() {
                             className="rounded-full p-2 shadow-soft hover:bg-accent transition-colors duration-200"
                             aria-label={social.name}
                         >
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.7 }}
-                        > 
-                            {social.svg}
-                        </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.7 }}
+                            >
+                                {social.svg}
+                            </motion.div>
                         </motion.a>
                     ))}
                 </div>
+                <p className="text-[#3b2f2f] dark:text-[#f5e6d3] font-label text-[10px] tracking-widest uppercase opacity-50 text-center">© {new Date().getFullYear()} Punto Chocolate. Todos los derechos reservados.</p>
             </div>
-        </div>
-        
-
-        {/* Derechos reservados */}
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >   
-            <div className="text-center text-cream/60 text-sm mt-8 mb-2">
-                © {new Date().getFullYear()} Punto Chocolate. Todos los derechos reservados.
-            </div>
-        </motion.div>
-    </footer>
-  );
+        </footer>
+    );
 }

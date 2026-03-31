@@ -22,3 +22,5 @@ export const HERO_SECTION_IMG = '/images/Hero.jpg';
 export const ALFAJOR_IMG = '/images/AlfajorMain.jpg';
 // Imagen para la seccion Hero en mobile
 export const HERO_MOBILE_IMG = '/images/HeroMobile.jpg';
+// Icono Punto Chocolate
+export const ICONO_PUNTO_CHOCO = '/images/heladeria-icono.jpg';
