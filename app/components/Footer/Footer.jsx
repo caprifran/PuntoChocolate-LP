@@ -5,13 +5,6 @@ import { playfair } from '../../font.js';
 import { socialLinks } from './social.js';
 import { ICONO_PUNTO_CHOCO } from '../images.js';
 
-const links = [
-    { name: 'Inicio', id: 'hero' },
-    { name: 'Helados', id: 'helados' },
-    { name: 'Chocolatería', id: 'chocolateria' },
-    { name: 'Sobre Nosotros', id: 'about' },
-];
-
 export default function Footer() {
     return (
         <footer className="bg-surface dark:bg-choco w-full border-t border-cream/80 flex flex-col justify-between items-center px-12 py-16 gap-10">
