@@ -1,42 +1,43 @@
 'use client';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { playfair } from '../../font.js';
 import TiposChocolates from './TiposChocolates.jsx';
 import { CHOCOLATE_IMG } from '../images.js';
 
 export default function Chocolateria() {
   return (
-    <section className="my-16 text-cream" id="chocolateria">
-      <div className="bg-choco mx-auto flex flex-col-reverse md:flex-row gap-6 md:gap-10 items-center md:h-[320px] w-full shadow-soft overflow-hidden">
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
-          className='pl-[1rem]'
-        >
-          <h2 className={`${playfair.className} text-3xl font-bold mb-4`}>Chocolatería artesanal</h2>
-          <p className="text-lg mb-2">
-            Nuestros chocolates son elaborados a mano, seleccionando los mejores ingredientes para lograr una experiencia premium y auténtica. Bombones, tabletas, trufas y más, con recetas propias y mucho amor.
-          </p>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className='h-[320px] relative w-full md:w-[480px] md:min-w-[480px]'
-        >
-          <Image
-            src={CHOCOLATE_IMG}
-            alt="Chocolatería artesanal referencia"
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 480px"
-            priority
-          />
-        </motion.div>
+    <section className="py-24 bg-cream overflow-hidden">
+      <div className="container mx-auto px-12">
+        <div className="flex flex-col md:flex-row-reverse gap-12 items-end mb-24" id="chocolateria">
+          <motion.div
+            className="md:w-1/2 aspect-[4/5] bg-choco"
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+          >
+            <img alt="Chocolatería artesanal" className="w-full h-full object-cover" src={CHOCOLATE_IMG} />
+          </motion.div>
+          <motion.div
+            className="md:w-1/2 pb-12"
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+          >
+            <span className="text-choco font-label text-sm uppercase tracking-[0.3em] mb-4 block">La Boutique</span>
+            <h2 className="text-3xl md:text-5xl font-headline italic mb-8 leading-tight break-words">Pequeñas Joyas <br /> de Cacao Puro.</h2>
+            <p className="text-choco text-lg font-body leading-relaxed max-w-md mb-8">
+              Nuestra chocolatería es un ejercicio de precisión. Cada bombón y cada tableta es el resultado de meses de investigación sobre perfiles de tueste y maridajes inesperados.
+            </p>
+            <div className="w-24 h-px bg-choco"></div>
+          </motion.div>
+        </div>
+        {/* Tipos Chocolates Tabs & Carousel */}
+        <div className="mt-24">
+          <TiposChocolates />
+        </div>
       </div>
-      <TiposChocolates />
     </section>
   );
 }
+

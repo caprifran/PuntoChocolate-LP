@@ -1,0 +1,38 @@
+'use client';
+import { saboresNuevo } from './sabores.js';
+import Card from '../Carousel/Card.jsx';
+import dynamic from 'next/dynamic';
+import { useState } from 'react';
+const EmblaCarousel = dynamic(() => import('../Carousel/EmblaCarousel.jsx'), { ssr: false });
+
+export default function Sabores() {
+  const [activeTab, setActiveTab] = useState(0);
+  return (
+    <div>
+      {/* Tabs */}
+      <div className="flex flex-nowrap gap-8 border-b border-choco/10 mb-12 overflow-x-auto no-scrollbar">
+        {saboresNuevo.map((grupo, idx) => (
+          <button
+            key={grupo.type}
+            onClick={(e) => { setActiveTab(idx); e.currentTarget.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' }); }}
+            className={`text-sm uppercase tracking-[0.3em] whitespace-nowrap pb-3 transition-all duration-200 bg-transparent outline-none cursor-pointer border-0 border-b-2 border-solid
+              ${activeTab === idx
+                ? 'text-choco border-choco font-semibold'
+                : 'text-choco/40 border-transparent hover:text-choco'}
+            `}
+            role="tab"
+            aria-selected={activeTab === idx}
+          >
+            {grupo.type}
+          </button>
+        ))}
+      </div>
+      {/* Carrusel activo */}
+      <EmblaCarousel resetKey={activeTab}>
+        {saboresNuevo[activeTab].sabores.map((sabor, i) => (
+          <Card key={sabor.nombre} sabor={sabor} delay={i * 0.08} />
+        ))}
+      </EmblaCarousel>
+    </div>
+  );
+}
