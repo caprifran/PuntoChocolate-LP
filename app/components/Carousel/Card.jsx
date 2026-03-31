@@ -4,60 +4,55 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
 
-export default function Card({ sabor, delay }) {
-  const [isFlipped, setIsFlipped] = useState(false);
+export default function Card({ sabor, delay = 0 }) {
+  const [isActive, setIsActive] = useState(false);
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
-      className="relative min-w-[180px] max-w-[200px] w-[200px] h-[200px] flex-shrink-0 cursor-pointer select-none"
-      style={{ perspective: 1200 }}
-      whileHover={{ scale: 1.03, y: -2 }}
-      whileTap={{ scale: 1.03, y: -2 }}
-      onClick={() => setIsFlipped(!isFlipped)}
-      onMouseEnter={() => setIsFlipped(true)}
-      onMouseLeave={() => setIsFlipped(false)}
+      className="relative min-w-[300px] max-w-[300px] flex-shrink-0 cursor-pointer select-none"
+      onClick={() => setIsActive((v) => !v)}
+      onMouseEnter={() => setIsActive(true)}
+      onMouseLeave={() => setIsActive(false)}
     >
-      <motion.div
-        animate={{ rotateY: isFlipped ? 180 : 0 }}
-        transition={{ type: 'spring', stiffness: 220, damping: 25 }}
-        className="relative w-full h-full rounded-[24px] shadow-[0_8px_30px_rgba(0,0,0,0.08)]"
-        style={{ transformStyle: 'preserve-3d'}}
-      >
-        {/* Front */}
-        <div
-          className="absolute inset-0 w-full h-full rounded-[24px] overflow-hidden"
-          style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}
-        >
+      {/* Card body */}
+      <div className="overflow-hidden rounded-2xl bg-cream shadow-soft">
+        {/* Image + overlay */}
+        <div className="relative h-80 overflow-hidden">
           <Image
             src={sabor.imagen}
             alt={sabor.nombre}
             fill
-            className="object-cover"
-            sizes="200px"
+            className="object-cover transition-transform duration-700 ease-out"
+            style={{ transform: isActive ? 'scale(1.05)' : 'scale(1)' }}
+            sizes="300px"
             draggable={false}
           />
+          {/* Description overlay — grows upward from bottom of image */}
+          <motion.div
+            initial={false}
+            animate={{
+              height: isActive ? 'auto' : 0,
+              opacity: isActive ? 1 : 0,
+            }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
+            className="absolute bottom-0 left-0 right-0 overflow-hidden bg-gradient-to-t from-choco/90 via-choco/70 to-transparent"
+          >
+            <p className="px-5 pt-10 pb-4 text-sm text-cream/90 leading-relaxed">
+              {sabor.descripcion || 'Producto artesanal'}
+            </p>
+          </motion.div>
         </div>
 
-        {/* Back */}
-        <div
-          className="absolute inset-0 w-full h-full bg-choco/95 backdrop-blur-md rounded-[24px] flex flex-col items-center justify-center p-4 text-cream border border-cream/10"
-          style={{
-            transform: 'rotateY(180deg)',
-            backfaceVisibility: 'hidden',
-            WebkitBackfaceVisibility: 'hidden',
-          }}
-        >
-          <span className="font-bold text-lg mb-1 text-accent text-center w-full leading-tight text-balance">
+        {/* Title below image */}
+        <div className="px-5 pt-4 pb-5">
+          <h3 className="text-xl font-semibold italic text-choco leading-tight">
             {sabor.nombre}
-          </span>
-          <span className="text-sm text-cream text-center w-full overflow-hidden line-clamp-6 text-ellipsis">
-            {sabor.descripcion || 'Helado artesanal'}
-          </span>
+          </h3>
         </div>
-      </motion.div>
+      </div>
     </motion.div>
   );
 }

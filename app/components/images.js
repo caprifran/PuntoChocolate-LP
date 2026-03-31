@@ -12,6 +12,7 @@ export const CONTACT_IMG = '/images/contact-ref.jpg';
 export const WHATSAPP_LOGO = '/images/WhatsApp.svg';
 // Imagen Helado Seccion Heladería
 export const HELADO_IMG = '/images/HeladoMain.jpg';
+export const SECCION_HELADOS = '/images/SeccionHelados_2.jpg';
 // Imagen Chocolate Seccion Chocolatería
 export const CHOCOLATE_IMG = '/images/ChocolateMain.jpg';
 // Imagen para la seccion about

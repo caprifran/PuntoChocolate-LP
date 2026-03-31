@@ -7,7 +7,7 @@ import Alfajores from './components/Alfajores/Alfajores.jsx';
 import About from './components/About/About.jsx';
 import WhatsAppFloat from './components/WhatsAppFloat/WhatsAppFloat.jsx';
 import Footer from './components/Footer/Footer.jsx';
-import Helados from './components/Sabores/Helados.jsx';
+import Helados from './components/Helados/Helados.jsx';
 
 export default function Page() {
   return (
