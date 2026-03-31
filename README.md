@@ -25,9 +25,11 @@ El sitio incluye las siguientes secciones:
 |---|---|
 | **Next.js 16** | Framework React con App Router |
 | **React 19** | Librería de UI |
-| **Tailwind CSS 4** | Estilos utilitarios |
-| **Framer Motion** | Animaciones |
-| **Embla Carousel** | Carrusel de sabores |
+| **Tailwind CSS 4** | Estilos utilitarios y Layout fluido |
+| **Framer Motion** | Animaciones de físicas interactivas |
+| **Lenis Scroll** | Momentum nativo (Motor Antigravedad) |
+| **Google Fonts** | Cormorant Garamond (Lujo) y Montserrat |
+| **Embla Carousel** | Carrusel táctil con Spring Physics |
 
 ## Instalación
 
@@ -59,9 +61,11 @@ La aplicación estará disponible en [http://localhost:3000](http://localhost:30
 
 ```
 app/
-├── layout.jsx          # Layout principal
-├── page.jsx            # Página de inicio
+├── layout.jsx          # Layout principal (App Router)
+├── page.jsx            # Página de inicio fluida
+├── font.js             # Definición de Typography (Montserrat/Cormorant)
 ├── components/
+│   ├── AntigravityProvider/ # Motor Físico (Lenis) de renderizado
 │   ├── About/          # Sección "Sobre nosotros"
 │   ├── Carousel/       # Componentes del carrusel (Embla)
 │   ├── Chocolateria/   # Sección de chocolatería

@@ -43,9 +43,9 @@ export default function EmblaCarousel({ children, resetKey }) {
   }, [emblaApi]);
 
   return (
-    <div ref={rootRef} className="relative w-full max-w-full overflow-hidden">
-      <div className="w-full max-w-full overflow-hidden" ref={emblaRef}>
-        <div className="flex gap-[5px]">
+    <div ref={rootRef} className="relative w-full max-w-full pb-10" data-lenis-prevent="true">
+      <div className="w-full max-w-full overflow-hidden px-4 py-12 -my-12" ref={emblaRef}>
+        <div className="flex gap-[24px]">
           {children}
         </div>
       </div>

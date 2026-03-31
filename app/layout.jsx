@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import { inter } from './font.js';
+import AntigravityProvider from './components/AntigravityProvider/AntigravityProvider.jsx';
 
 export const metadata = {
   title: 'Punto Chocolate',
@@ -10,7 +11,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <body className={`${inter.className} bg-cream text-choco min-h-screen`}>
-        {children}
+        <AntigravityProvider>
+          {children}
+        </AntigravityProvider>
       </body>
     </html>
   );

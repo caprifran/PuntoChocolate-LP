@@ -8,6 +8,7 @@ const links = [
   { name: 'Inicio', id: 'hero' },
   { name: 'Helados', id: 'helados' },
   { name: 'Chocolatería', id: 'chocolateria' },
+  { name: 'Alfajores', id: 'alfajores' },
   { name: 'Sobre Nosotros', id: 'about' },
 ];
 
@@ -50,11 +51,10 @@ export default function Navbar() {
   return (
     <motion.nav
       id="navbar"
-      className={`sticky top-0 left-0 w-full max-w-[100vw] overflow-hidden z-50 transition-all duration-300 bg-choco ${
-        scrolled
+      className={`sticky top-0 left-0 w-full max-w-[100vw] overflow-hidden z-50 transition-all duration-300 bg-choco ${scrolled
           ? 'shadow-soft backdrop-blur-md'
           : ''
-      }`}
+        }`}
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
         {/* Logo + Nombre */}
