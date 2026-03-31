@@ -1,3 +1,5 @@
+'use client';
+
 import Navbar from './components/Navbar/Navbar.jsx';
 import Hero from './components/Hero/Hero.jsx';
 import Chocolateria from './components/Chocolateria/Chocolateria.jsx';
@@ -9,14 +11,18 @@ import Helados from './components/Sabores/Helados.jsx';
 
 export default function Page() {
   return (
-    <main>
+    <main className="flex flex-col w-full relative min-h-screen">
       <Navbar />
       <Hero />
-      <Helados />
-      <Chocolateria />
-      <Alfajores />
-      <About />
-      <Footer />
+      <div className="flex flex-col w-full gap-3">
+        <Helados />
+        <Chocolateria />
+        <Alfajores />
+        <About />
+        <Footer />
+      </div>
+
+      {/* 0g Modals / Fixed floating elements */}
       <WhatsAppFloat />
     </main>
   );

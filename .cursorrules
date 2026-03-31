@@ -1,0 +1,9 @@
+# UI/UX Rules
+
+1. **Mandatory UI/UX Skill Usage:** Whenever you are asked to design, build, review, or refine any user interface components, you MUST apply the guidelines from the `ui-ux-pro-max` skill located in `.agent/skills/ui-ux-pro-max`.
+2. **Pre-Delivery Checklist Checklist:**
+   - No emojis as icons (use SVGs natively).
+   - Stable hover states with smooth transitions (`transition-all duration-300`).
+   - Use `cursor-pointer` explicitly on interactive elements.
+   - Maintain appropriate light/dark mode contrast (particularly for glassmorphism).
+3. **PuntoChocolate-LP Context:** Optimize styling for "Premium E-commerce" (focusing on tactile ripples, smooth momentum scrolling, glassmorphic UI, and organic shapes suitable for a high-end chocolate brand).

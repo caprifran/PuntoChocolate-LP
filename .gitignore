@@ -28,3 +28,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# ide / AI tooling
+.vscode/
+.idea/
+.gemini/
+.agent/
