@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
 
-export default function Card({ sabor, delay = 0 }) {
+export default function Card({ sabor, delay = 0, onActivate }) {
   const [isActive, setIsActive] = useState(false);
 
   return (
@@ -13,7 +13,11 @@ export default function Card({ sabor, delay = 0 }) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
       className="relative min-w-[300px] max-w-[300px] flex-shrink-0 cursor-pointer select-none"
-      onClick={() => setIsActive((v) => !v)}
+      onClick={() => {
+        const next = !isActive;
+        setIsActive(next);
+        if (next && onActivate) onActivate();
+      }}
       onMouseEnter={() => setIsActive(true)}
       onMouseLeave={() => setIsActive(false)}
     >
