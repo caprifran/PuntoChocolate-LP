@@ -7,7 +7,7 @@ import { HERO_SECTION_IMG, HERO_MOBILE_IMG } from '../images.js';
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-[50vh] sm:min-h-[50vh] md:min-h-[70vh] flex items-center justify-center bg-cream overflow-hidden" id="hero">
+    <section className="relative w-full h-[calc(100vh-64px)] flex items-center justify-center bg-cream overflow-hidden" id="hero">
       {/* Imagen mobile */}
       <Image
         src={HERO_MOBILE_IMG}

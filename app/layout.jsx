@@ -5,6 +5,9 @@ import AntigravityProvider from './components/AntigravityProvider/AntigravityPro
 export const metadata = {
   title: 'Punto Chocolate',
   description: 'Heladería & Chocolatería artesanal en Villa la Angostura',
+  icons: {
+    icon: '/images/chocolateria-ref.jpg',
+  },
 };
 
 export default function RootLayout({ children }) {

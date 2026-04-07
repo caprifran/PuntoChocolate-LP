@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 
 export default function EmblaCarousel({ children, resetKey }) {
@@ -46,7 +46,11 @@ export default function EmblaCarousel({ children, resetKey }) {
     <div ref={rootRef} className="relative w-full max-w-full pb-10" data-lenis-prevent="true">
       <div className="w-full max-w-full overflow-hidden px-4 py-12 -my-12" ref={emblaRef}>
         <div className="flex gap-[24px]">
-          {children}
+          {React.Children.map(children, (child, index) =>
+            React.isValidElement(child)
+              ? React.cloneElement(child, { onActivate: () => emblaApi && emblaApi.scrollTo(index) })
+              : child
+          )}
         </div>
       </div>
     </div>

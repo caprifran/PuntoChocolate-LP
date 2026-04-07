@@ -14,7 +14,7 @@ export default function Sabores() {
         {saboresNuevo.map((grupo, idx) => (
           <button
             key={grupo.type}
-            onClick={(e) => { setActiveTab(idx); e.currentTarget.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' }); }}
+            onClick={(e) => { setActiveTab(idx); const btn = e.currentTarget; const container = btn.parentElement; container.scrollTo({ left: btn.offsetLeft - container.offsetWidth / 2 + btn.offsetWidth / 2, behavior: 'smooth' }); }}
             className={`text-sm uppercase tracking-[0.3em] whitespace-nowrap pb-3 transition-all duration-200 bg-transparent outline-none cursor-pointer border-0 border-b-2 border-solid
               ${activeTab === idx
                 ? 'text-choco border-choco font-semibold'
