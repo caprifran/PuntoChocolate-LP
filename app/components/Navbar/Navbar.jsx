@@ -50,7 +50,7 @@ export default function Navbar() {
   };
 
   return (
-    <motion.nav
+    <nav
       id="navbar"
       className={`sticky top-0 left-0 w-full max-w-[100vw] overflow-hidden z-50 transition-all duration-300 bg-choco ${scrolled
         ? 'shadow-soft backdrop-blur-md'
@@ -63,7 +63,7 @@ export default function Navbar() {
           onClick={(e) => handleClick(e, 'hero')}
           className="flex items-center gap-2 no-underline"
         >
-          <Image src={ICONO_PUNTO_CHOCO} alt="Logo Punto Chocolate" width={64} height={64} className="h-10 w-10 rounded-full object-cover" />
+          <Image src={ICONO_PUNTO_CHOCO} alt="Logo Punto Chocolate" width={40} height={40} className="h-10 w-10 rounded-full object-cover" />
           <span className={`${playfair.className} text-2xl italic tracking-tight text-cream hidden sm:inline`}>
             Punto Chocolate
           </span>
@@ -119,6 +119,6 @@ export default function Navbar() {
           </motion.ul>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </nav>
   );
 }

@@ -10,6 +10,7 @@ export default function Hero() {
         alt="Banner principal Punto Chocolate"
         fill
         priority
+        fetchPriority="high"
         className="object-cover object-center w-full h-full absolute inset-0 z-0 block"
         sizes="100vw"
       />
