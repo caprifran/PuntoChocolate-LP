@@ -8,7 +8,7 @@ export default function Chocolateria() {
     <section className="py-24 bg-cream overflow-hidden">
       <div className="container mx-auto px-12">
         <div className="flex flex-col md:flex-row-reverse gap-12 items-end mb-24" id="chocolateria">
-          <AnimatedReveal className="md:w-1/2 aspect-[4/5] bg-choco relative" direction="right">
+          <AnimatedReveal className="w-full md:w-1/2 aspect-[4/5] bg-choco relative" direction="right">
             <Image
               alt="Chocolatería artesanal"
               className="object-cover"

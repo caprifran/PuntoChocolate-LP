@@ -33,3 +33,31 @@ html {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+/* ── Skeleton loading ── */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(59, 47, 47, 0.06) 25%,
+    rgba(59, 47, 47, 0.12) 50%,
+    rgba(59, 47, 47, 0.06) 75%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+.skeleton-light {
+  background: linear-gradient(
+    90deg,
+    rgba(245, 230, 211, 0.1) 25%,
+    rgba(245, 230, 211, 0.2) 50%,
+    rgba(245, 230, 211, 0.1) 75%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
