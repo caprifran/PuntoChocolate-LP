@@ -1,5 +1,3 @@
-'use client';
-
 import Navbar from './components/Navbar/Navbar.jsx';
 import Hero from './components/Hero/Hero.jsx';
 import Chocolateria from './components/Chocolateria/Chocolateria.jsx';
@@ -22,7 +20,7 @@ export default function Page() {
         <Footer />
       </div>
 
-      {/* 0g Modals / Fixed floating elements */}
+      {/* Floating elements */}
       <WhatsAppFloat />
     </main>
   );
