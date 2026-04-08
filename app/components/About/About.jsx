@@ -1,70 +1,26 @@
-'use client';
-import { useEffect, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { ABOUT_SECTION_IMG } from '../images.js';
-
-const START_YEAR = 2017;
-
-function useCountUp(target, duration = 1500) {
-  const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const hasRun = useRef(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasRun.current) {
-          hasRun.current = true;
-          const start = performance.now();
-          const step = (now) => {
-            const progress = Math.min((now - start) / duration, 1);
-            setCount(Math.floor(progress * target));
-            if (progress < 1) requestAnimationFrame(step);
-          };
-          requestAnimationFrame(step);
-        }
-      },
-      { threshold: 0.5 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [target, duration]);
-
-  return { count, ref };
-}
+import AnimatedReveal from '../AnimatedReveal.jsx';
+import AboutCounter from './AboutCounter.jsx';
 
 export default function About() {
-  const years = new Date().getFullYear() - START_YEAR;
-  const { count, ref: counterRef } = useCountUp(years, 1200);
-
   return (
     <section className="py-32 bg-cream overflow-hidden" id="about">
       <div className="container mx-auto px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
           
-          <motion.div
-            className="relative md:order-2"
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-          >
+          <AnimatedReveal className="relative md:order-2" direction="right">
             <div className="absolute -top-12 -left-12 w-64 h-64 bg-choco/5 -z-10"></div>
-            <img
+            <Image
               alt="Punto Chocolate interior"
               className="w-full grayscale hover:grayscale-0 transition-all duration-1000"
               src={ABOUT_SECTION_IMG}
+              width={800}
+              height={600}
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
-          </motion.div>
-          <motion.div
-            className="md:order-1"
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
-          >
+          </AnimatedReveal>
+          <AnimatedReveal className="md:order-1" direction="left" delay={0.2}>
             <h2 className="text-3xl md:text-5xl font-headline italic mb-10 leading-tight text-choco break-words">
               Nuestra Historia <br /> se escribe con Cacao.
             </h2>
@@ -77,12 +33,9 @@ export default function About() {
               </p>
             </div>
             <div className="mt-12 flex flex-row-reverse gap-12 border-t border-choco/10 pt-12">
-              <div ref={counterRef}>
-                <span className="block text-3xl font-headline italic text-choco">{count}+</span>
-                <span className="text-[10px] font-label uppercase tracking-widest text-choco/60">Años de Maestría</span>
-              </div>
+              <AboutCounter />
             </div>
-          </motion.div>
+          </AnimatedReveal>
         </div>
       </div>
     </section>
