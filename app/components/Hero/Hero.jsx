@@ -1,29 +1,18 @@
 'use client';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import {BANNER_PPAL_IMG, WHATSAPP_LOGO} from '../images.js';
 import { playfair } from '../../font.js';
-import { HERO_SECTION_IMG, HERO_MOBILE_IMG } from '../images.js';
+import { HERO_SECTION_IMG} from '../images.js';
 
 export default function Hero() {
   return (
     <section className="relative w-full h-[calc(100vh-64px)] flex items-center justify-center bg-cream overflow-hidden" id="hero">
-      {/* Imagen mobile */}
-      <Image
-        src={HERO_MOBILE_IMG}
-        alt="Banner principal Punto Chocolate"
-        fill
-        priority
-        className="object-cover object-center w-full h-full absolute inset-0 z-0 block md:hidden"
-        sizes="100vw"
-      />
-      {/* Imagen desktop */}
       <Image
         src={HERO_SECTION_IMG}
         alt="Banner principal Punto Chocolate"
         fill
         priority
-        className="object-cover object-center w-full h-full absolute inset-0 z-0 hidden md:block"
+        className="object-cover object-center w-full h-full absolute inset-0 z-0 block"
         sizes="100vw"
       />
       <div
