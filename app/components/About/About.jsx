@@ -18,6 +18,7 @@ export default function About() {
               width={800}
               height={600}
               sizes="(max-width: 768px) 100vw, 50vw"
+              quality={65}
             />
           </AnimatedReveal>
           <AnimatedReveal className="md:order-1" direction="left" delay={0.2}>

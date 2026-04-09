@@ -32,6 +32,7 @@ export default function Card({ sabor, delay = 0, onActivate }) {
             className="object-cover transition-transform duration-700 ease-out"
             style={{ transform: isActive ? 'scale(1.05)' : 'scale(1)' }}
             sizes="300px"
+            quality={60}
             draggable={false}
           />
           {/* Description overlay — grows upward from bottom of image */}

@@ -15,6 +15,7 @@ export default function Alfajores() {
               src={ALFAJOR_IMG}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
+              quality={65}
             />
           </AnimatedReveal>
           <AnimatedReveal className="md:w-1/2 pb-12" direction="right" delay={0.2}>
