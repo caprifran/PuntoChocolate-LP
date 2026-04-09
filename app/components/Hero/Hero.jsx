@@ -13,6 +13,7 @@ export default function Hero() {
         fetchPriority="high"
         className="object-cover object-center w-full h-full absolute inset-0 z-0 block"
         sizes="100vw"
+        quality={60}
       />
       <div
         className="relative z-10 w-full flex flex-col items-center justify-end h-full px-4 py-6 md:py-12 mt-auto"

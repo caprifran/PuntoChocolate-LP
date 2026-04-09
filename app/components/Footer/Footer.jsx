@@ -8,7 +8,7 @@ export default function Footer() {
         <footer className="bg-surface dark:bg-choco w-full border-t border-cream/80 flex flex-col justify-between items-center px-12 py-16 gap-10">
             <div className="flex items-center">
                 <div className="flex items-center gap-4">
-                    <Image src={ICONO_PUNTO_CHOCO} alt="Logo Punto Chocolate" width={64} height={64} className="h-10 w-10 rounded-full object-cover" />
+                    <Image src={ICONO_PUNTO_CHOCO} alt="Logo Punto Chocolate" width={40} height={40} sizes="40px" quality={50} className="h-10 w-10 rounded-full object-cover" />
                     <span className={`${playfair.className} text-2xl italic tracking-tight text-cream`}>Punto Chocolate</span>
                 </div>
             </div>
