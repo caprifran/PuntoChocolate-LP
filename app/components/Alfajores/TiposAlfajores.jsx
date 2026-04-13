@@ -18,8 +18,8 @@ export default function TiposAlfajores() {
               onClick={(e) => { setActiveTab(idx); const btn = e.currentTarget; const container = btn.parentElement; container.scrollTo({ left: btn.offsetLeft - container.offsetWidth / 2 + btn.offsetWidth / 2, behavior: 'smooth' }); }}
               className={`text-sm uppercase tracking-[0.3em] whitespace-nowrap pb-3 transition-all duration-200 bg-transparent outline-none cursor-pointer border-0 border-b-2 border-solid
                 ${activeTab === idx
-                  ? 'text-choco border-choco font-semibold'
-                  : 'text-choco/40 border-transparent hover:text-choco'}
+                  ? 'text-accent border-accent font-semibold'
+                  : 'text-choco/40 border-transparent hover:text-accent font-semibold'}
               `}
               role="tab"
               aria-selected={activeTab === idx}

@@ -9,8 +9,6 @@ export default function Card({ sabor, delay = 0, onActivate }) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
       className="relative min-w-[300px] max-w-[300px] flex-shrink-0 cursor-pointer select-none"
       onClick={() => {
@@ -22,7 +20,7 @@ export default function Card({ sabor, delay = 0, onActivate }) {
       onMouseLeave={() => setIsActive(false)}
     >
       {/* Card body */}
-      <div className="overflow-hidden rounded-2xl bg-cream shadow-soft">
+      <div className="overflow-hidden rounded-xl bg-cream shadow-soft">
         {/* Image + overlay */}
         <div className="relative h-80 overflow-hidden">
           <Image
@@ -53,7 +51,7 @@ export default function Card({ sabor, delay = 0, onActivate }) {
 
         {/* Title below image */}
         <div className="px-5 pt-4 pb-5">
-          <h3 className="text-xl font-semibold italic text-choco leading-tight">
+          <h3 className="text-xl font-semibold text-choco leading-tight">
             {sabor.nombre}
           </h3>
         </div>

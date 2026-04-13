@@ -12,7 +12,7 @@ El sitio incluye las siguientes secciones:
 
 - **Navbar** — Navegación principal
 - **Hero** — Banner de presentación
-- **Helados** — Carrusel interactivo de sabores (Embla Carousel)
+- **Helados** — Carrusel de sabores con movimiento constante (marquee), loop infinito garantizado y controles laterales externos en escritorio.
 - **Chocolatería** — Catálogo de productos de chocolatería
 - **Alfajores** — Catálogo de alfajores artesanales con carrusel por tipo
 - **About** — Historia y filosofía del local
@@ -29,7 +29,7 @@ El sitio incluye las siguientes secciones:
 | **Framer Motion** | Animaciones de físicas interactivas |
 | **Lenis Scroll** | Momentum nativo (Motor Antigravedad) |
 | **Google Fonts** | Cormorant Garamond (Lujo) y Montserrat |
-| **Embla Carousel** | Carrusel táctil con Spring Physics |
+| **Embla Carousel** | Carrusel con AutoScroll Plugin (Efecto Marquee) |
 
 ## Instalación
 
