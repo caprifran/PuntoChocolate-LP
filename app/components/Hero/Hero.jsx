@@ -17,7 +17,7 @@ export default function Hero() {
       />
       <div
         className="relative z-10 w-full flex flex-col items-center justify-end h-full px-4 py-6 md:py-12 mt-auto"
-        style={{ boxShadow: 'inset 0 -120px 80px -40px rgba(30, 20, 15, 0.55)' }}
+        style={{ boxShadow: 'inset 0 -120px 120px -40px rgba(30, 20, 15, 1)' }}
       >
         <HeroContent />
       </div>

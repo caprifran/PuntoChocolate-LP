@@ -40,7 +40,7 @@ export default function AboutCounter() {
   return (
     <div ref={counterRef}>
       <span className="block text-3xl font-headline italic text-choco">{count}+</span>
-      <span className="text-[10px] font-label uppercase tracking-widest text-choco/60">Años de Maestría</span>
+      <span className="text-[10px] font-label uppercase tracking-widest text-choco/80">Años de Maestría</span>
     </div>
   );
 }

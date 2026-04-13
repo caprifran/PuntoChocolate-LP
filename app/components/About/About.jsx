@@ -33,7 +33,7 @@ export default function About() {
                 Desde nuestra apertura en el corazón de Villa la Angostura, nos hemos dedicado a buscar los mejores granos de cacao, trabajando codo a codo con productores locales de leche y frutas para garantizar que cada bocado cuente una historia de excelencia.
               </p>
             </div>
-            <div className="mt-12 flex flex-row-reverse gap-12 border-t border-choco/10 pt-12">
+            <div className="mt-12 flex flex-row-reverse gap-12 border-t border-accent/60 pt-12">
               <AboutCounter />
             </div>
           </AnimatedReveal>
